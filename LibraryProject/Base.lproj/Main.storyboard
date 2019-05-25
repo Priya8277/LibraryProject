@@ -18,11 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rr1-g4-HLs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rr1-g4-HLs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUT-Tf-oBK">
-                                <rect key="frame" x="30" y="214" width="315" height="40"/>
+                                <rect key="frame" x="30" y="264" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dUb-il-6XG"/>
                                 </constraints>
@@ -31,7 +32,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZK-kT-U4Q">
-                                <rect key="frame" x="30" y="334" width="315" height="40"/>
+                                <rect key="frame" x="30" y="384" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.2037163079" green="0.4708764553" blue="0.96475440260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JJe-XB-miR"/>
@@ -39,24 +40,24 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rKZ-V5-5xt"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyo-lU-oFF">
-                                <rect key="frame" x="30" y="274" width="315" height="40"/>
+                                <rect key="frame" x="30" y="324" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Lhf-u7-Ath"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rr1-g4-HLs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1rZ-1Z-6Mq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rr1-g4-HLs" secondAttribute="trailing" id="37s-Ri-aHP"/>
-                            <constraint firstItem="FUT-Tf-oBK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="8ZT-W0-xxt"/>
+                            <constraint firstItem="FUT-Tf-oBK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="8ZT-W0-xxt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FUT-Tf-oBK" secondAttribute="trailing" constant="30" id="I5G-eu-12w"/>
-                            <constraint firstItem="rr1-g4-HLs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K9d-f1-tBH"/>
                             <constraint firstItem="fyo-lU-oFF" firstAttribute="leading" secondItem="FUT-Tf-oBK" secondAttribute="leading" id="Maf-5J-RtX"/>
                             <constraint firstItem="fyo-lU-oFF" firstAttribute="top" secondItem="FUT-Tf-oBK" secondAttribute="bottom" constant="20" id="PyV-0w-kBR"/>
                             <constraint firstItem="4ZK-kT-U4Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Twt-mR-sM1"/>
@@ -64,11 +65,14 @@
                             <constraint firstItem="4ZK-kT-U4Q" firstAttribute="top" secondItem="fyo-lU-oFF" secondAttribute="bottom" constant="20" id="bUX-LV-MLW"/>
                             <constraint firstItem="fyo-lU-oFF" firstAttribute="trailing" secondItem="FUT-Tf-oBK" secondAttribute="trailing" id="ohC-ik-Ey6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4ZK-kT-U4Q" secondAttribute="trailing" constant="30" id="paY-q9-vLE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rr1-g4-HLs" secondAttribute="bottom" id="r7v-1Z-g0o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="zPF-VW-Lei"/>
+                    <connections>
+                        <outlet property="password" destination="fyo-lU-oFF" id="tPM-DL-sl1"/>
+                        <outlet property="userName" destination="FUT-Tf-oBK" id="GZy-Pe-tDa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
